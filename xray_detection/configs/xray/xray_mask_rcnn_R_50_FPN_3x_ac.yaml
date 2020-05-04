@@ -1,0 +1,10 @@
+_BASE_: "../xray_Base-RCNN-FPN.yaml"
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-101.pkl"
+  MASK_ON: True
+  RESNETS:
+    DEPTH: 50
+DATASETS:
+  TRAIN: ("xray_ac_train",)
+  TEST: ("xray_ac_val","xray_ac_test")
+OUTPUT_DIR: /data/d2test/xray_mask_rcnn_50_ac_00020
